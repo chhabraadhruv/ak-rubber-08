@@ -8,25 +8,37 @@ const products = [
     id: 1,
     name: "Hydraulic Seals",
     description: "High-quality hydraulic seals for industrial applications",
-    image: "https://images.unsplash.com/photo-1628355955311-d1fe75549c00?auto=format&fit=crop&q=80&w=300&h=200"
+    image: "/lovable-uploads/6e4f34e0-f85f-4012-b926-11f8a03ba2c1.png"
   },
   {
     id: 2,
     name: "O-Rings",
     description: "Precision-engineered O-rings in various materials and sizes",
-    image: "https://images.unsplash.com/photo-1530424920872-1e0462a26d0c?auto=format&fit=crop&q=80&w=300&h=200"
+    image: "/lovable-uploads/0f89117a-42c8-45fc-8348-7921d1318ed8.png"
   },
   {
     id: 3,
     name: "V Seals",
     description: "Specialized V seals for demanding industrial environments",
-    image: "https://images.unsplash.com/photo-1623000951624-e9a7ab7baaf9?auto=format&fit=crop&q=80&w=300&h=200"
+    image: "/lovable-uploads/3e229a8e-00d4-41da-8c22-1ec8b03b4000.png"
   },
   {
     id: 4,
-    name: "PU Components",
-    description: "Polyurethane components with excellent durability",
-    image: "https://images.unsplash.com/photo-1530968831117-fde74630ecf2?auto=format&fit=crop&q=80&w=300&h=200"
+    name: "Rubber Sheets",
+    description: "High-quality rubber sheets in various colors and thicknesses",
+    image: "/lovable-uploads/d6eb41ee-6682-4830-89c2-3a53a217a4f3.png"
+  },
+  {
+    id: 5,
+    name: "Colorful Rubber Components",
+    description: "Customized rubber components in various colors and specifications",
+    image: "/lovable-uploads/2e5a1442-2857-486c-8446-c671d4622228.png"
+  },
+  {
+    id: 6,
+    name: "Spiral Rubber Seals",
+    description: "Durable spiral rubber seals for specialized applications",
+    image: "/lovable-uploads/fb02f5e3-3b67-45de-b57a-af2d71a48ae4.png"
   }
 ];
 

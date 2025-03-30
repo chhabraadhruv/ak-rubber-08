@@ -6,26 +6,30 @@ type FilmReelImage = {
   alt: string;
 };
 
-const defaultImages: FilmReelImage[] = [
+const productImages: FilmReelImage[] = [
   { 
-    src: "https://images.unsplash.com/photo-1628355955311-d1fe75549c00?auto=format&fit=crop&q=80&w=300&h=200", 
-    alt: "Rubber O-rings in various colors" 
+    src: "/lovable-uploads/2e5a1442-2857-486c-8446-c671d4622228.png", 
+    alt: "Colorful rubber O-rings and seals" 
   },
   { 
-    src: "https://images.unsplash.com/photo-1530424920872-1e0462a26d0c?auto=format&fit=crop&q=80&w=300&h=200", 
-    alt: "Industrial rubber hose" 
+    src: "/lovable-uploads/3e229a8e-00d4-41da-8c22-1ec8b03b4000.png", 
+    alt: "Brown and black oil seals" 
   },
   { 
-    src: "https://images.unsplash.com/photo-1623000951624-e9a7ab7baaf9?auto=format&fit=crop&q=80&w=300&h=200", 
-    alt: "Hydraulic components" 
+    src: "/lovable-uploads/d6eb41ee-6682-4830-89c2-3a53a217a4f3.png", 
+    alt: "Black, red and white rubber sheets" 
   },
   { 
-    src: "https://images.unsplash.com/photo-1606701845789-c24a32b12aa4?auto=format&fit=crop&q=80&w=300&h=200", 
-    alt: "Rubber seals" 
+    src: "/lovable-uploads/fb02f5e3-3b67-45de-b57a-af2d71a48ae4.png", 
+    alt: "Spiral rubber seals in different colors" 
   },
   { 
-    src: "https://images.unsplash.com/photo-1530968831117-fde74630ecf2?auto=format&fit=crop&q=80&w=300&h=200", 
-    alt: "Industrial machinery parts" 
+    src: "/lovable-uploads/6e4f34e0-f85f-4012-b926-11f8a03ba2c1.png", 
+    alt: "Hydraulic seals in various colors" 
+  },
+  { 
+    src: "/lovable-uploads/0f89117a-42c8-45fc-8348-7921d1318ed8.png", 
+    alt: "Various sizes of black O-rings" 
   }
 ];
 
@@ -41,7 +45,7 @@ type FilmReelProps = {
   autoPlay?: boolean;
 };
 
-export default function FilmReel({ images = defaultImages, autoPlay = true }: FilmReelProps) {
+export default function FilmReel({ images = productImages, autoPlay = true }: FilmReelProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
