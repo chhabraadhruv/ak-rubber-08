@@ -9,9 +9,9 @@ export default function Header() {
         <div className="flex items-center justify-center md:justify-start w-full md:w-auto mb-4 md:mb-0">
           <Link to="/" className="flex flex-col items-center">
             <img
-              src="/lovable-uploads/1bb1fcca-f7f5-42de-8260-bf4e040c64c0.png"
+              src="/lovable-uploads/0551d74c-b6a6-48a5-bcbf-ba6a22d3cb95.png"
               alt="AK Rubber Logo"
-              className="h-20 w-20"
+              className="h-20 w-auto"
             />
             <div className="text-center md:text-left">
               <h1 className="text-3xl md:text-4xl font-bold">AK Rubber Spares</h1>
