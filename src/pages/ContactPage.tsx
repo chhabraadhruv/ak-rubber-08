@@ -49,10 +49,10 @@ export default function ContactPage() {
       };
       
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_qgdhjyg', // Replace with your EmailJS service ID
+        'template_okf6usr', // Replace with your EmailJS template ID
         templateParams,
-        'YOUR_USER_ID' // Replace with your EmailJS user ID
+        'YEj5BsyXkF3j5FnBp' // Replace with your EmailJS user ID
       );
       
       toast({
