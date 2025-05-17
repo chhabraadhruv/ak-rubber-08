@@ -1,10 +1,11 @@
-
 import ContactInfo from "@/components/ContactInfo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
+import emailjs from 'emailjs-com';
+import { Loader2 } from "lucide-react";
 
 export default function ContactPage() {
   const { toast } = useToast();
@@ -14,14 +15,16 @@ export default function ContactPage() {
     phone: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     // Form validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -32,21 +35,48 @@ export default function ContactPage() {
       return;
     }
     
-    // In a real application, you'd send this data to your backend
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
     
-    toast({
-      title: "Message sent",
-      description: "We'll get back to you soon!"
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
+    try {
+      // Send email using EmailJS
+      // You need to replace these with your actual EmailJS service, template and user IDs
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Not provided',
+        message: formData.message,
+        reply_to: formData.email
+      };
+      
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        templateParams,
+        'YOUR_USER_ID' // Replace with your EmailJS user ID
+      );
+      
+      toast({
+        title: "Message sent",
+        description: "Thank you! We'll get back to you soon!"
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send your message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -74,6 +104,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Your name"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -89,6 +120,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Your email address"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -102,6 +134,7 @@ export default function ContactPage() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Your phone number"
+                  disabled={isSubmitting}
                 />
               </div>
               
@@ -117,12 +150,24 @@ export default function ContactPage() {
                   placeholder="Your message"
                   rows={5}
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               
-              <Button type="submit" className="w-full">
-                Send Message
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </Button>
+              
+              <div className="text-sm text-center text-muted-foreground mt-4">
+                <p>After submitting, please allow some time for us to get back to you.</p>
+              </div>
             </form>
           </div>
         </div>
