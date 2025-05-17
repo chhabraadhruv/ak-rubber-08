@@ -49,7 +49,7 @@ export default function ContactPage() {
       };
       
       await emailjs.send(
-        'service_qgdhjyg', // Replace with your EmailJS service ID
+        'service_1q7sye1', // Replace with your EmailJS service ID
         'template_okf6usr', // Replace with your EmailJS template ID
         templateParams,
         'YEj5BsyXkF3j5FnBp' // Replace with your EmailJS user ID
