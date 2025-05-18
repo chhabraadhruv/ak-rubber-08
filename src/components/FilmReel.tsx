@@ -1,5 +1,11 @@
-
 import { useEffect, useState } from "react";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 type FilmReelImage = {
   src: string;
@@ -33,13 +39,6 @@ const productImages: FilmReelImage[] = [
   }
 ];
 
-// Create placeholders for the film reel
-const createFilmFrames = (count: number) => {
-  return Array.from({ length: count }, (_, index) => (
-    <div key={`frame-${index}`} className="film-frame"></div>
-  ));
-};
-
 type FilmReelProps = {
   images?: FilmReelImage[];
   autoPlay?: boolean;
@@ -47,52 +46,46 @@ type FilmReelProps = {
 
 export default function FilmReel({ images = productImages, autoPlay = true }: FilmReelProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [api, setApi] = useState<any>(null);
 
   useEffect(() => {
-    if (!autoPlay) return;
+    if (!autoPlay || !api) return;
     
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      api.scrollNext();
     }, 3000);
     
     return () => clearInterval(interval);
-  }, [autoPlay, images.length]);
-
-  const duplicatedImages = [...images, ...images]; // Duplicate images for infinite scroll effect
+  }, [autoPlay, api]);
 
   return (
-    <div className="w-full overflow-hidden bg-black">
-      {/* Top film strip */}
-      <div className="film-strip">
-        <div className="film-content">
-          {createFilmFrames(30)}
-        </div>
-      </div>
-      
-      {/* Images container */}
-      <div className="relative overflow-hidden">
-        <div className="flex film-content">
-          {duplicatedImages.map((image, index) => (
-            <div 
-              key={`image-${index}`} 
-              className="flex-shrink-0 w-[300px] h-[200px] mx-1"
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-              />
-            </div>
+    <div className="w-full bg-black border-t border-b border-gray-800 py-8">
+      <Carousel
+        setApi={setApi}
+        className="max-w-3xl mx-auto"
+        opts={{
+          loop: true,
+          align: "center"
+        }}
+      >
+        <CarouselContent>
+          {images.map((image, index) => (
+            <CarouselItem key={`image-${index}`} className="flex items-center justify-center">
+              <div className="overflow-hidden rounded-lg">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            </CarouselItem>
           ))}
+        </CarouselContent>
+        <div className="flex items-center justify-center mt-4">
+          <CarouselPrevious className="relative -left-0 mx-2" />
+          <CarouselNext className="relative -right-0 mx-2" />
         </div>
-      </div>
-      
-      {/* Bottom film strip */}
-      <div className="film-strip">
-        <div className="film-content">
-          {createFilmFrames(30)}
-        </div>
-      </div>
+      </Carousel>
     </div>
   );
 }
