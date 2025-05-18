@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
+import { Phone } from "lucide-react";
 
 export default function Header() {
   return (
@@ -15,12 +16,19 @@ export default function Header() {
           </Link>
         </div>
         
-        <nav className="flex items-center space-x-8">
-          <Link to="/" className="hover:text-gray-300 font-medium">Home</Link>
-          <Link to="/products" className="hover:text-gray-300 font-medium">Products</Link>
-          <Link to="/about" className="hover:text-gray-300 font-medium">About Us</Link>
-          <Link to="/contact" className="hover:text-gray-300 font-medium">Contact Us</Link>
-        </nav>
+        <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+          <div className="flex items-center space-x-2 text-white">
+            <Phone className="h-4 w-4" />
+            <a href="tel:+919810580983" className="hover:text-gray-300 font-medium">+91 9810580983</a>
+          </div>
+          
+          <nav className="flex items-center space-x-8">
+            <Link to="/" className="hover:text-gray-300 font-medium">Home</Link>
+            <Link to="/products" className="hover:text-gray-300 font-medium">Products</Link>
+            <Link to="/about" className="hover:text-gray-300 font-medium">About Us</Link>
+            <Link to="/contact" className="hover:text-gray-300 font-medium">Contact Us</Link>
+          </nav>
+        </div>
       </div>
     </header>
   );
