@@ -64,14 +64,28 @@ export default function ContactInfo() {
       
       <div className="flex items-start space-x-4">
         <MapPin className="w-6 h-6 mt-1 flex-shrink-0 text-primary" />
-        <div>
-          <button 
-            onClick={() => openGoogleMaps('Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurugram (HR)')}
-            className="text-lg text-left hover:text-primary transition-colors"
-          >
-            Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurugram (HR)
-          </button>
-          <p className="text-sm text-gray-400 mt-1">Open Monday to Saturday, 10:00 AM to 8:00 PM</p>
+        <div className="space-y-4 w-full">
+          <div className="p-3 border border-gray-700 rounded-md bg-gray-800/30">
+            <h3 className="font-medium text-lg mb-1">Gurugram Store</h3>
+            <button 
+              onClick={() => openGoogleMaps('Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurugram (HR)')}
+              className="text-lg text-left hover:text-primary transition-colors"
+            >
+              Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurugram (HR)
+            </button>
+            <p className="text-sm text-gray-400 mt-1">Open Monday to Saturday, 10:00 AM to 8:00 PM</p>
+          </div>
+          
+          <div className="p-3 border border-gray-700 rounded-md bg-gray-800/30">
+            <h3 className="font-medium text-lg mb-1">Delhi Store</h3>
+            <button 
+              onClick={() => openGoogleMaps('2789/5, Lothian Road, Near P.N.B. Bank, Kashmere Gate, Delhi-110006')}
+              className="text-lg text-left hover:text-primary transition-colors"
+            >
+              2789/5, Lothian Road, Near P.N.B. Bank, Kashmere Gate, Delhi-110006
+            </button>
+            <p className="text-sm text-gray-400 mt-1">Open Monday to Saturday, 10:00 AM to 8:00 PM</p>
+          </div>
         </div>
       </div>
       
