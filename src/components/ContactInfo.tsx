@@ -22,29 +22,38 @@ export default function ContactInfo() {
   };
 
   return (
-    <div className="flex flex-col space-y-6 max-w-xl mx-auto">
+    <div className="flex flex-col space-y-6 max-w-xl mx-auto bg-gray-800/50 rounded-lg p-6 backdrop-blur-sm border border-gray-700 shadow-lg">
       <h2 className="text-2xl font-bold mb-4">Contact us:</h2>
       
       <div className="flex items-start space-x-4">
-        <Phone className="w-6 h-6 mt-1 flex-shrink-0" />
+        <Phone className="w-6 h-6 mt-1 flex-shrink-0 text-primary" />
         <div className="flex flex-col space-y-2">
           <button 
             onClick={() => openWhatsApp('9810580983')}
-            className="text-lg text-left hover:text-primary transition-colors"
+            className="text-lg text-left hover:text-primary transition-colors flex items-center"
           >
-            9810580983
+            <span>9810580983</span>
+            <span className="ml-2 text-xs px-2 py-0.5 bg-green-800/30 text-green-400 rounded-full">WhatsApp</span>
           </button>
           <button 
             onClick={() => openWhatsApp('9910249777')}
-            className="text-lg text-left hover:text-primary transition-colors"
+            className="text-lg text-left hover:text-primary transition-colors flex items-center"
           >
-            9910249777
+            <span>9910249777</span>
+            <span className="ml-2 text-xs px-2 py-0.5 bg-green-800/30 text-green-400 rounded-full">WhatsApp</span>
+          </button>
+          <button 
+            onClick={() => openWhatsApp('9871059983')}
+            className="text-lg text-left hover:text-primary transition-colors flex items-center"
+          >
+            <span>9871059983</span>
+            <span className="ml-2 text-xs px-2 py-0.5 bg-green-800/30 text-green-400 rounded-full">WhatsApp</span>
           </button>
         </div>
       </div>
       
       <div className="flex items-start space-x-4">
-        <Mail className="w-6 h-6 mt-1 flex-shrink-0" />
+        <Mail className="w-6 h-6 mt-1 flex-shrink-0 text-primary" />
         <button 
           onClick={() => openEmail('chhabraajay25@gmail.com')}
           className="text-lg text-left hover:text-primary transition-colors"
@@ -54,13 +63,22 @@ export default function ContactInfo() {
       </div>
       
       <div className="flex items-start space-x-4">
-        <MapPin className="w-6 h-6 mt-1 flex-shrink-0" />
-        <button 
-          onClick={() => openGoogleMaps('Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurugram (HR)')}
-          className="text-lg text-left hover:text-primary transition-colors"
-        >
-          Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurugram (HR)
-        </button>
+        <MapPin className="w-6 h-6 mt-1 flex-shrink-0 text-primary" />
+        <div>
+          <button 
+            onClick={() => openGoogleMaps('Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurugram (HR)')}
+            className="text-lg text-left hover:text-primary transition-colors"
+          >
+            Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurugram (HR)
+          </button>
+          <p className="text-sm text-gray-400 mt-1">Open Monday to Saturday, 10:00 AM to 8:00 PM</p>
+        </div>
+      </div>
+      
+      <div className="mt-4 pt-4 border-t border-gray-700">
+        <p className="text-sm text-center text-gray-400">
+          GST: <span className="font-medium text-white">06AAGPC8120M2ZS</span>
+        </p>
       </div>
     </div>
   );

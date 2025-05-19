@@ -1,3 +1,4 @@
+
 import ContactInfo from "@/components/ContactInfo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -82,14 +83,32 @@ export default function ContactPage() {
   return (
     <div className="animate-slide-in">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
-        <h1 className="text-3xl font-bold mb-12 text-center">Contact Us</h1>
+        <h1 className="text-4xl font-bold mb-12 text-center">Contact Us</h1>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
           <div>
             <ContactInfo />
+            
+            <div className="mt-8 p-6 bg-gray-800/50 rounded-lg backdrop-blur-sm border border-gray-700 shadow-lg">
+              <h3 className="text-xl font-bold mb-4">Business Hours</h3>
+              <ul className="space-y-2">
+                <li className="flex justify-between">
+                  <span>Monday - Friday:</span>
+                  <span>10:00 AM - 7:00 PM</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Saturday:</span>
+                  <span>10:00 AM - 5:00 PM</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Sunday:</span>
+                  <span>Closed</span>
+                </li>
+              </ul>
+            </div>
           </div>
           
-          <div className="bg-card rounded-lg p-6 shadow-sm">
+          <div className="bg-gray-800/50 rounded-lg p-6 backdrop-blur-sm border border-gray-700 shadow-lg">
             <h2 className="text-2xl font-bold mb-6">Send us a message</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -105,6 +124,7 @@ export default function ContactPage() {
                   placeholder="Your name"
                   required
                   disabled={isSubmitting}
+                  className="border-gray-700 bg-black/30"
                 />
               </div>
               
@@ -121,6 +141,7 @@ export default function ContactPage() {
                   placeholder="Your email address"
                   required
                   disabled={isSubmitting}
+                  className="border-gray-700 bg-black/30"
                 />
               </div>
               
@@ -135,6 +156,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Your phone number"
                   disabled={isSubmitting}
+                  className="border-gray-700 bg-black/30"
                 />
               </div>
               
@@ -151,6 +173,7 @@ export default function ContactPage() {
                   rows={5}
                   required
                   disabled={isSubmitting}
+                  className="border-gray-700 bg-black/30"
                 />
               </div>
               

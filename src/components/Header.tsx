@@ -34,12 +34,18 @@ export default function Header() {
         </div>
         
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-          <div className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors duration-300">
-            <Phone className="h-4 w-4" />
-            <a href="tel:+919810580983" className="font-medium">+91 9810580983</a>
+          <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
+            <div className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors duration-300">
+              <Phone className="h-4 w-4" />
+              <a href="tel:+919810580983" className="font-medium">+91 9810580983</a>
+            </div>
+            <div className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors duration-300">
+              <Phone className="h-4 w-4" />
+              <a href="tel:+919871059983" className="font-medium">+91 9871059983</a>
+            </div>
           </div>
           
-          <nav className="flex items-center space-x-8">
+          <nav className="flex items-center space-x-4 md:space-x-8">
             {[
               { to: "/", label: "Home" },
               { to: "/products", label: "Products" },
