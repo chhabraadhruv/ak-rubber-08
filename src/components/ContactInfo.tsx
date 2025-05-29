@@ -1,4 +1,3 @@
-
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function ContactInfo() {
@@ -40,13 +39,6 @@ export default function ContactInfo() {
             className="text-lg text-left hover:text-primary transition-colors flex items-center"
           >
             <span>9910249777</span>
-            <span className="ml-2 text-xs px-2 py-0.5 bg-green-800/30 text-green-400 rounded-full">WhatsApp</span>
-          </button>
-          <button 
-            onClick={() => openWhatsApp('9871059983')}
-            className="text-lg text-left hover:text-primary transition-colors flex items-center"
-          >
-            <span>9871059983</span>
             <span className="ml-2 text-xs px-2 py-0.5 bg-green-800/30 text-green-400 rounded-full">WhatsApp</span>
           </button>
         </div>

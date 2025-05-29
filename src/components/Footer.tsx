@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col items-center md:items-end">
             <p className="text-gray-300 mb-1">GST: <span className="font-medium">06AAGPC8120M2ZS</span></p>
-            <p className="text-gray-300">Contact: <a href="tel:+919871059983" className="hover:text-white transition-colors">+91 9871059983</a></p>
+            <p className="text-gray-300">Contact: <a href="tel:+919810580983" className="hover:text-white transition-colors">+91 9810580983</a></p>
           </div>
         </div>
         
