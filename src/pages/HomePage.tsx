@@ -1,4 +1,3 @@
-
 import FilmReel from "@/components/FilmReel";
 import DownloadButton from "@/components/DownloadButton";
 import { Button } from "@/components/ui/button";
@@ -24,7 +23,7 @@ export default function HomePage() {
               Best O-Rings & Hydraulic Components in <span className="text-primary">Gurgaon</span>
             </h1>
             <p className="text-xl md:text-2xl mb-4">
-              #1 Trusted Supplier Since 1991 | Premium Quality Guaranteed
+              Ethics Drive Quality
             </p>
             <p className="text-lg mb-8">
               Serving Industries Across Gurgaon, Delhi & NCR with Expert Solutions
