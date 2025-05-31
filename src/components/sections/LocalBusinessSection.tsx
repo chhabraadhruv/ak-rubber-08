@@ -24,7 +24,7 @@ export default function LocalBusinessSection() {
             <address className="not-italic text-gray-300 mb-3 text-sm sm:text-base leading-relaxed">
               Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurgaon (HR) - 122001
             </address>
-            <p className="text-xs sm:text-sm text-gray-400 mb-4">Open Mon-Sat: 10 AM - 8 PM</p>
+            <p className="text-xs sm:text-sm text-gray-400 mb-4">Open Mon-Sat: 9 AM - 7 PM</p>
             <Link 
               to="/contact" 
               className="inline-block rounded-full bg-primary text-black px-4 sm:px-6 py-2 sm:py-3 font-medium hover:bg-primary/90 transition-colors text-sm sm:text-base"
@@ -40,7 +40,7 @@ export default function LocalBusinessSection() {
             <address className="not-italic text-gray-300 mb-3 text-sm sm:text-base leading-relaxed">
               2789/5, Lothian Road, Near P.N.B. Bank, Kashmere Gate, Delhi - 110006
             </address>
-            <p className="text-xs sm:text-sm text-gray-400 mb-4">Open Mon-Sat: 10 AM - 8 PM</p>
+            <p className="text-xs sm:text-sm text-gray-400 mb-4">Open Mon-Sat: 9 AM - 7 PM</p>
             <Link 
               to="/contact" 
               className="inline-block rounded-full bg-primary text-black px-4 sm:px-6 py-2 sm:py-3 font-medium hover:bg-primary/90 transition-colors text-sm sm:text-base"

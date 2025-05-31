@@ -81,7 +81,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="animate-slide-in">
+    <div className="animate-slide-in pt-20 md:pt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold mb-12 text-center">Contact Us</h1>
         
@@ -93,12 +93,8 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold mb-4">Business Hours</h3>
               <ul className="space-y-2">
                 <li className="flex justify-between">
-                  <span>Monday - Friday:</span>
-                  <span>10:00 AM - 7:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Saturday:</span>
-                  <span>10:00 AM - 5:00 PM</span>
+                  <span>Monday - Saturday:</span>
+                  <span>9:00 AM - 7:00 PM</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Sunday:</span>
