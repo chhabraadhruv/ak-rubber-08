@@ -104,7 +104,13 @@
   
   /* Main layout adjustments for fixed header */
   main {
-    padding-top: 6rem;
+    padding-top: 4rem; /* Reduced for mobile */
+  }
+  
+  @media (min-width: 768px) {
+    main {
+      padding-top: 6rem;
+    }
   }
   
   /* Button hover effects */
@@ -171,5 +177,16 @@
     background: linear-gradient(90deg, #d0d0d0, #f0f0f0, #d0d0d0);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Ensure proper mobile text sizing */
+  @media (max-width: 767px) {
+    html {
+      font-size: 16px;
+    }
+    
+    .text-responsive {
+      font-size: clamp(0.875rem, 2.5vw, 1rem);
+    }
   }
 }
