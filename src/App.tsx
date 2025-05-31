@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +13,8 @@ import Footer from "./components/Footer";
 import ProductsPage from "./pages/ProductsPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import BlogPage from "./pages/BlogPage";
+import BlogPostPage from "./pages/BlogPostPage";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -38,6 +41,8 @@ const App = () => (
               <Route path="/products" element={<><ScrollToTop /><ProductsPage /></>} />
               <Route path="/about" element={<><ScrollToTop /><AboutPage /></>} />
               <Route path="/contact" element={<><ScrollToTop /><ContactPage /></>} />
+              <Route path="/blog" element={<><ScrollToTop /><BlogPage /></>} />
+              <Route path="/blog/:slug" element={<><ScrollToTop /><BlogPostPage /></>} />
               <Route path="*" element={<><ScrollToTop /><NotFound /></>} />
             </Routes>
             <Footer />
