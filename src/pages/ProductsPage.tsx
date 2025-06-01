@@ -45,7 +45,7 @@ const products = [
 export default function ProductsPage() {
   return (
     <div className="animate-slide-in">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 pt-20 md:pt-24">
         <h1 className="text-3xl font-bold mb-6">Our Products</h1>
         
         <p className="text-lg mb-8 max-w-4xl">
