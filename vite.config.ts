@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => ({
   },
   preview: {
     port: 8080,
+    host: "::",
   },
   plugins: [
     react(),

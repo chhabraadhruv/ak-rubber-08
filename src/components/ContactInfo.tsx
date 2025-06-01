@@ -77,7 +77,7 @@ export default function ContactInfo() {
             >
               2789/5, Lothian Road, Near P.N.B. Bank, Kashmere Gate, Delhi-110006
             </button>
-            <p className="text-sm text-gray-400 mt-1">Open Monday to Saturday, 9:00 AM to 7:00 PM</p>
+            <p className="text-sm text-gray-400 mt-1">Open Monday to Saturday, 11:00 AM to 7:00 PM</p>
           </div>
         </div>
       </div>
