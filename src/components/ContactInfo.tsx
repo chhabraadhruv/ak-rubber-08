@@ -18,7 +18,7 @@ export default function ContactInfo() {
   // Function to open Google Maps with the given address
   const openGoogleMaps = (address: string) => {
     const encodedAddress = encodeURIComponent(address);
-    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+    window.open(`https://maps.app.goo.gl/BK32g6479Zzd5Qxo7?g_st=aw`, '_blank');
   };
 
   return (
