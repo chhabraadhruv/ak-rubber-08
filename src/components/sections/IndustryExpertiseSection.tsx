@@ -1,5 +1,6 @@
 
-import { Wrench, Factory, Truck, Building2, Zap, Droplets } from "lucide-react";
+import { Wrench, Factory, Truck, Building2, Zap, Droplets, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const industries = [
   {
@@ -53,7 +54,7 @@ export default function IndustryExpertiseSection() {
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Serving diverse industries across Gurgaon and Delhi NCR with specialized sealing solutions 
-            tailored to meet the unique demands of each sector
+            tailored to meet the unique demands of each sector. Learn more about our <Link to="/products" className="text-primary hover:text-yellow-400 underline">complete product range</Link>.
           </p>
         </div>
 
@@ -79,7 +80,7 @@ export default function IndustryExpertiseSection() {
           <h3 className="text-2xl font-bold mb-6 text-center">
             Why Choose AK Rubber Spares for Your Sealing Needs?
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {expertise.map((item, index) => (
               <div 
                 key={index}
@@ -90,6 +91,37 @@ export default function IndustryExpertiseSection() {
                 <p className="text-gray-300">{item}</p>
               </div>
             ))}
+          </div>
+          
+          <div className="border-t border-gray-700 pt-6">
+            <h4 className="text-lg font-semibold mb-4 text-center">Industry Resources & Partners</h4>
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <a 
+                href="https://www.iso.org/standard/74020.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center text-primary hover:text-yellow-400 transition-colors"
+              >
+                ISO Standards for O-Rings <ExternalLink className="h-3 w-3 ml-1" />
+              </a>
+              <span className="text-gray-500">•</span>
+              <a 
+                href="https://www.parkerlegris.com/seal-technology" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center text-primary hover:text-yellow-400 transition-colors"
+              >
+                Hydraulic Seal Technology <ExternalLink className="h-3 w-3 ml-1" />
+              </a>
+              <span className="text-gray-500">•</span>
+              <Link to="/about" className="text-primary hover:text-yellow-400 transition-colors">
+                Our Company History
+              </Link>
+              <span className="text-gray-500">•</span>
+              <Link to="/contact" className="text-primary hover:text-yellow-400 transition-colors">
+                Technical Support
+              </Link>
+            </div>
           </div>
         </div>
       </div>
