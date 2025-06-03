@@ -26,7 +26,7 @@ export default function LocalBusinessSection() {
             </address>
             <p className="text-xs sm:text-sm text-gray-400 mb-4">Open Mon-Sat: 9 AM - 7 PM</p>
             <Link 
-              to="https://g.co/kgs/pS34xoD" 
+              to="https://maps.app.goo.gl/vBQU1hLDcEVsRxFn9?g_st=aw" 
               className="inline-block rounded-full bg-primary text-black px-4 sm:px-6 py-2 sm:py-3 font-medium hover:bg-primary/90 transition-colors text-sm sm:text-base"
             >
               Visit Our Store
@@ -42,7 +42,7 @@ export default function LocalBusinessSection() {
             </address>
             <p className="text-xs sm:text-sm text-gray-400 mb-4">Open Mon-Sat: 11 AM - 7 PM</p>
             <Link 
-              to="/contact" 
+              to="https://maps.app.goo.gl/BK32g6479Zzd5Qxo7?g_st=aw" 
               className="inline-block rounded-full bg-primary text-black px-4 sm:px-6 py-2 sm:py-3 font-medium hover:bg-primary/90 transition-colors text-sm sm:text-base"
             >
               Visit Our Delhi Store
