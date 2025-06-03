@@ -61,7 +61,8 @@ export default function ContactInfo() {
           <div className="p-3 border border-gray-700 rounded-md bg-gray-800/30">
             <h3 className="font-medium text-lg mb-1">Gurugram Store</h3>
             <button 
-              onClick={() => openGoogleMaps('https://maps.app.goo.gl/vBQU1hLDcEVsRxFn9?g_st=aw')}
+              onClick={() => window.open(`https://maps.app.goo.gl/vBQU1hLDcEVsRxFn9?g_st=aw`, '_blank')}
+              ;
               className="text-lg text-left hover:text-primary transition-colors"
             >
               Shop No. 2, 434/8 Madanpuri Road, Opp. Laxmi Bazaar, New Colony, Gurugram (HR)
@@ -72,7 +73,7 @@ export default function ContactInfo() {
           <div className="p-3 border border-gray-700 rounded-md bg-gray-800/30">
             <h3 className="font-medium text-lg mb-1">Delhi Store</h3>
             <button 
-              onClick={() => openGoogleMaps('https://maps.app.goo.gl/BK32g6479Zzd5Qxo7?g_st=aw')}
+              onClick={() => window.open(`https://maps.app.goo.gl/BK32g6479Zzd5Qxo7?g_st=aw`, '_blank')}
               className="text-lg text-left hover:text-primary transition-colors"
             >
               2789/5, Lothian Road, Near P.N.B. Bank, Kashmere Gate, Delhi-110006
