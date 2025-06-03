@@ -18,7 +18,7 @@ window.open(`mailto:${email}`, '_blank');
 // Function to open Google Maps with the given address
 const openGoogleMaps = (address: string) => {
 const encodedAddress = encodeURIComponent(address);
-    window.open(``, '_blank');
+    window.open(`https://maps.app.goo.gl/search/${encodedAddress}`, '_blank');
 };
 
 return (
