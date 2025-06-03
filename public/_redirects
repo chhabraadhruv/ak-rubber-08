@@ -1,2 +1,8 @@
 
+# Redirect all routes to index.html for SPA routing
 /*    /index.html   200
+
+# Optional: Redirect old URLs if you had them
+/about.html   /about   301
+/products.html   /products   301
+/contact.html   /contact   301

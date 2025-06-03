@@ -36,15 +36,17 @@ const App = () => (
         <BrowserRouter>
           <div className="flex flex-col min-h-screen bg-black text-white">
             <Header />
-            <Routes>
-              <Route path="/" element={<><ScrollToTop /><HomePage /></>} />
-              <Route path="/products" element={<><ScrollToTop /><ProductsPage /></>} />
-              <Route path="/about" element={<><ScrollToTop /><AboutPage /></>} />
-              <Route path="/contact" element={<><ScrollToTop /><ContactPage /></>} />
-              <Route path="/blog" element={<><ScrollToTop /><BlogPage /></>} />
-              <Route path="/blog/:slug" element={<><ScrollToTop /><BlogPostPage /></>} />
-              <Route path="*" element={<><ScrollToTop /><NotFound /></>} />
-            </Routes>
+            <main className="flex-1">
+              <Routes>
+                <Route path="/" element={<><ScrollToTop /><HomePage /></>} />
+                <Route path="/about" element={<><ScrollToTop /><AboutPage /></>} />
+                <Route path="/products" element={<><ScrollToTop /><ProductsPage /></>} />
+                <Route path="/contact" element={<><ScrollToTop /><ContactPage /></>} />
+                <Route path="/blog" element={<><ScrollToTop /><BlogPage /></>} />
+                <Route path="/blog/:slug" element={<><ScrollToTop /><BlogPostPage /></>} />
+                <Route path="*" element={<><ScrollToTop /><NotFound /></>} />
+              </Routes>
+            </main>
             <Footer />
           </div>
         </BrowserRouter>
