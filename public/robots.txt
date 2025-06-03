@@ -25,5 +25,8 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Sitemap
-Sitemap: https://ak-rubber.vercel.app/sitemap.xml
+# Sitemap location
+Sitemap: https://www.akrubberspares.in/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
