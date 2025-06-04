@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
 import { Phone, Menu, X } from "lucide-react";
@@ -29,8 +28,8 @@ export default function Header() {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2 transition-all duration-300 hover:scale-105 group">
               <img 
-                src="/lovable-uploads/2a21abce-8b19-4b07-aa41-ee149b44b972.png" 
-                alt="AK Rubber Spares Logo" 
+                src="https://akrubberspares.in/logo.png" 
+                alt="AK Rubber Industry Logo - Leading O-rings and Hydraulic Seals Supplier Gurgaon" 
                 className="h-12 lg:h-16 w-auto group-hover:brightness-110 transition-all duration-300" 
               />
             </Link>
@@ -70,8 +69,8 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
               <img 
-                src="/lovable-uploads/2a21abce-8b19-4b07-aa41-ee149b44b972.png" 
-                alt="AK Rubber Spares Logo" 
+                src="https://akrubberspares.in/logo.png" 
+                alt="AK Rubber Industry Logo" 
                 className="h-10 w-auto" 
               />
             </Link>
