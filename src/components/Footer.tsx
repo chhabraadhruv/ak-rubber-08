@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import { Instagram } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,7 +18,19 @@ export default function Footer() {
           </div>
           <div className="flex flex-col items-center md:items-end">
             <p className="text-gray-300 mb-1">GST: <span className="font-medium">06AAGPC8120M2ZS</span></p>
-            <p className="text-gray-300">Contact: <a href="tel:+919810580983" className="hover:text-white transition-colors">+91 9810580983</a></p>
+            <p className="text-gray-300 mb-3">Contact: <a href="tel:+919810580983" className="hover:text-white transition-colors">+91 9810580983</a></p>
+            <div className="flex items-center space-x-4">
+              <span className="text-gray-300 text-sm">Follow us:</span>
+              <a 
+                href="https://www.instagram.com/akrubberspares?igsh=aWFjY3JzdzM0d2h4" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-gray-300 hover:text-pink-400 transition-colors duration-300 group"
+              >
+                <Instagram className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                <span className="text-sm">@akrubberspares</span>
+              </a>
+            </div>
           </div>
         </div>
         
