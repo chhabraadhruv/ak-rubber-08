@@ -10,22 +10,21 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-4 md:mb-0">
             <img 
-              src="https://akrubberspares.in/logo.png" 
-              alt="AK Rubber Industry Logo" 
+              src="/lovable-uploads/2a21abce-8b19-4b07-aa41-ee149b44b972.png" 
+              alt="AK Rubber Spares Logo" 
               className="h-12 w-auto" 
             />
-            <p className="text-sm text-gray-300 mt-2">AK Rubber Industry - Leading supplier since 1991</p>
           </div>
           <div className="flex flex-col items-center md:items-end">
             <p className="text-gray-300 mb-1">GST: <span className="font-medium">06AAGPC8120M2ZS</span></p>
-            <p className="text-gray-300">Contact AK Rubber: <a href="tel:+919810580983" className="hover:text-white transition-colors">+91 9810580983</a></p>
+            <p className="text-gray-300">Contact: <a href="tel:+919810580983" className="hover:text-white transition-colors">+91 9810580983</a></p>
           </div>
         </div>
         
         <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-sm text-gray-400">
-              Copyrights © {currentYear} AK Rubber Industry | Made by DC
+              Copyrights © {currentYear} AK Rubber | Made by DC
             </p>
           </div>
           <div className="flex space-x-4">
