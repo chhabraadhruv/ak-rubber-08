@@ -1,6 +1,7 @@
 
 import { useParams, Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft, Phone, Mail } from "lucide-react";
+import { useEffect } from "react";
 
 const blogPosts = {
   "hydraulic-cylinder-seal-kit-installation-guide": {
@@ -11,6 +12,8 @@ const blogPosts = {
     readTime: "8 min read",
     image: "/lovable-uploads/9110a679-cf87-406f-96ce-295cf2ab79f8.png",
     category: "Technical Guide",
+    metaDescription: "Learn the essential steps for proper hydraulic cylinder seal kit installation to maintain optimal performance and prevent costly downtime. Expert guide by AK Rubber Spares.",
+    keywords: "hydraulic cylinder seals, seal kit installation, hydraulic maintenance, industrial seals, hydraulic repair",
     content: `
       <p>Hydraulic cylinders are the workhorses of industrial machinery, from excavators to manufacturing equipment. When seals fail, proper installation of replacement seal kits is crucial for maintaining optimal performance and preventing costly downtime. At AK Rubber Spares, we understand the importance of getting this right the first time.</p>
 
@@ -75,6 +78,8 @@ const blogPosts = {
     readTime: "12 min read",
     image: "/lovable-uploads/3ef9654a-fd56-4764-b151-b0888210ca3a.png",
     category: "Maintenance Guide",
+    metaDescription: "Master pneumatic O-ring replacement to prevent costly downtime and maintain optimal system performance. Complete guide for industrial pneumatic applications.",
+    keywords: "pneumatic O-rings, O-ring replacement, pneumatic maintenance, industrial seals, compressed air systems",
     content: `
       <p>Pneumatic systems are the backbone of countless industrial operations, from manufacturing assembly lines to heavy machinery. At the heart of these systems lie small but crucial components: O-rings. These simple rubber seals play a vital role in maintaining system pressure, preventing leaks, and ensuring optimal performance. Understanding when and how to replace pneumatic O-rings can mean the difference between smooth operations and costly downtime.</p>
 
@@ -185,6 +190,119 @@ const blogPosts = {
 export default function BlogPostPage() {
   const { slug } = useParams();
   const blogPost = slug ? blogPosts[slug as keyof typeof blogPosts] : null;
+
+  useEffect(() => {
+    if (blogPost) {
+      // Update document title
+      document.title = `${blogPost.title} | AK Rubber Spares`;
+      
+      // Update meta description
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', blogPost.metaDescription);
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'description';
+        meta.content = blogPost.metaDescription;
+        document.head.appendChild(meta);
+      }
+
+      // Update meta keywords
+      const metaKeywords = document.querySelector('meta[name="keywords"]');
+      if (metaKeywords) {
+        metaKeywords.setAttribute('content', blogPost.keywords);
+      } else {
+        const meta = document.createElement('meta');
+        meta.name = 'keywords';
+        meta.content = blogPost.keywords;
+        document.head.appendChild(meta);
+      }
+
+      // Add Open Graph meta tags
+      const updateOrCreateMetaTag = (property: string, content: string) => {
+        let metaTag = document.querySelector(`meta[property="${property}"]`);
+        if (metaTag) {
+          metaTag.setAttribute('content', content);
+        } else {
+          metaTag = document.createElement('meta');
+          metaTag.setAttribute('property', property);
+          metaTag.setAttribute('content', content);
+          document.head.appendChild(metaTag);
+        }
+      };
+
+      updateOrCreateMetaTag('og:title', blogPost.title);
+      updateOrCreateMetaTag('og:description', blogPost.metaDescription);
+      updateOrCreateMetaTag('og:image', `https://www.akrubberspares.in${blogPost.image}`);
+      updateOrCreateMetaTag('og:url', `https://www.akrubberspares.in/blog/${blogPost.slug}`);
+      updateOrCreateMetaTag('og:type', 'article');
+      updateOrCreateMetaTag('article:published_time', blogPost.date);
+      updateOrCreateMetaTag('article:author', 'AK Rubber Spares');
+
+      // Add Twitter Card meta tags
+      const updateOrCreateTwitterTag = (name: string, content: string) => {
+        let metaTag = document.querySelector(`meta[name="${name}"]`);
+        if (metaTag) {
+          metaTag.setAttribute('content', content);
+        } else {
+          metaTag = document.createElement('meta');
+          metaTag.setAttribute('name', name);
+          metaTag.setAttribute('content', content);
+          document.head.appendChild(metaTag);
+        }
+      };
+
+      updateOrCreateTwitterTag('twitter:card', 'summary_large_image');
+      updateOrCreateTwitterTag('twitter:title', blogPost.title);
+      updateOrCreateTwitterTag('twitter:description', blogPost.metaDescription);
+      updateOrCreateTwitterTag('twitter:image', `https://www.akrubberspares.in${blogPost.image}`);
+
+      // Add structured data (JSON-LD)
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": blogPost.title,
+        "description": blogPost.metaDescription,
+        "image": `https://www.akrubberspares.in${blogPost.image}`,
+        "author": {
+          "@type": "Organization",
+          "name": "AK Rubber Spares",
+          "url": "https://www.akrubberspares.in"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "AK Rubber Spares",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.akrubberspares.in/favicon.ico"
+          }
+        },
+        "datePublished": blogPost.date,
+        "dateModified": blogPost.date,
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://www.akrubberspares.in/blog/${blogPost.slug}`
+        }
+      };
+
+      // Remove existing structured data script if any
+      const existingScript = document.querySelector('script[type="application/ld+json"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+      // Add new structured data script
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+    }
+
+    // Cleanup function to reset title when component unmounts
+    return () => {
+      document.title = 'AK Rubber Spares - Premium O-Rings & Hydraulic Seals';
+    };
+  }, [blogPost]);
 
   if (!blogPost) {
     return (

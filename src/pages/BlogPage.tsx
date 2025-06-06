@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight, TrendingUp } from "lucide-react";
+import { useEffect } from "react";
 
 const blogPosts = [
   {
@@ -26,6 +27,58 @@ const blogPosts = [
 ];
 
 export default function BlogPage() {
+  useEffect(() => {
+    // Update document title
+    document.title = 'Technical Blog & Industry Insights | AK Rubber Spares';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const description = 'Expert guidance on hydraulic components, O-rings, and industrial sealing solutions. Technical articles and maintenance guides from AK Rubber Spares specialists.';
+    if (metaDescription) {
+      metaDescription.setAttribute('content', description);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = description;
+      document.head.appendChild(meta);
+    }
+
+    // Update meta keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    const keywords = 'hydraulic seals, pneumatic O-rings, industrial maintenance, seal installation, technical guides, rubber spares';
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', keywords);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'keywords';
+      meta.content = keywords;
+      document.head.appendChild(meta);
+    }
+
+    // Add Open Graph meta tags
+    const updateOrCreateMetaTag = (property: string, content: string) => {
+      let metaTag = document.querySelector(`meta[property="${property}"]`);
+      if (metaTag) {
+        metaTag.setAttribute('content', content);
+      } else {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('property', property);
+        metaTag.setAttribute('content', content);
+        document.head.appendChild(metaTag);
+      }
+    };
+
+    updateOrCreateMetaTag('og:title', 'Technical Blog & Industry Insights | AK Rubber Spares');
+    updateOrCreateMetaTag('og:description', description);
+    updateOrCreateMetaTag('og:url', 'https://www.akrubberspares.in/blog');
+    updateOrCreateMetaTag('og:type', 'website');
+
+    // Cleanup function
+    return () => {
+      document.title = 'AK Rubber Spares - Premium O-Rings & Hydraulic Seals';
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
       <main className="flex-1">
