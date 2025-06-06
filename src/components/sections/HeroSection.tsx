@@ -1,5 +1,6 @@
 
 import { MapPin, Star, Award, Clock, Download } from "lucide-react";
+import { lazy, Suspense } from "react";
 
 export default function HeroSection() {
   return (
@@ -9,6 +10,8 @@ export default function HeroSection() {
           src="/lovable-uploads/9110a679-cf87-406f-96ce-295cf2ab79f8.png" 
           alt="Premium O-rings and hydraulic components supplier - AK Rubber Spares" 
           className="w-full h-full object-cover animate-scale-in"
+          loading="eager"
+          fetchpriority="high"
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50 z-10"></div>

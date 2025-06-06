@@ -48,6 +48,36 @@ type FilmReelProps = {
 export default function FilmReel({ images = productImages, autoPlay = true }: FilmReelProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [api, setApi] = useState<any>(null);
+  const [visibleImages, setVisibleImages] = useState<FilmReelImage[]>([]);
+  const [observer, setObserver] = useState<IntersectionObserver | null>(null);
+  const [containerRef, setContainerRef] = useState<HTMLDivElement | null>(null);
+
+  // Set up intersection observer for lazy loading
+  useEffect(() => {
+    if (!containerRef) return;
+    
+    const options = {
+      root: null,
+      rootMargin: '100px',
+      threshold: 0.1
+    };
+    
+    const observerInstance = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setVisibleImages(images);
+        observerInstance.disconnect();
+      }
+    }, options);
+    
+    observerInstance.observe(containerRef);
+    setObserver(observerInstance);
+    
+    return () => {
+      if (observerInstance) {
+        observerInstance.disconnect();
+      }
+    };
+  }, [containerRef, images]);
 
   useEffect(() => {
     if (!autoPlay || !api) return;
@@ -60,7 +90,10 @@ export default function FilmReel({ images = productImages, autoPlay = true }: Fi
   }, [autoPlay, api]);
 
   return (
-    <div className="w-full bg-black border-t border-b border-gray-800 py-8">
+    <div 
+      className="w-full bg-black border-t border-b border-gray-800 py-8"
+      ref={setContainerRef}
+    >
       <Carousel
         setApi={setApi}
         className="max-w-3xl mx-auto"
@@ -70,13 +103,14 @@ export default function FilmReel({ images = productImages, autoPlay = true }: Fi
         }}
       >
         <CarouselContent>
-          {images.map((image, index) => (
+          {(visibleImages.length > 0 ? visibleImages : images.slice(0, 1)).map((image, index) => (
             <CarouselItem key={`image-${index}`} className="flex items-center justify-center">
               <div className="overflow-hidden rounded-lg">
                 <img
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-64 object-cover"
+                  loading={index === 0 ? "eager" : "lazy"}
                 />
               </div>
             </CarouselItem>
