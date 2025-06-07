@@ -16,7 +16,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
     message: "",
-    consent: false
+    consent: true
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
