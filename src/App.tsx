@@ -15,6 +15,8 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsConditionsPage from "./pages/TermsConditionsPage";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -44,6 +46,8 @@ const App = () => (
                 <Route path="/contact" element={<><ScrollToTop /><ContactPage /></>} />
                 <Route path="/blog" element={<><ScrollToTop /><BlogPage /></>} />
                 <Route path="/blog/:slug" element={<><ScrollToTop /><BlogPostPage /></>} />
+                <Route path="/privacy-policy" element={<><ScrollToTop /><PrivacyPolicyPage /></>} />
+                <Route path="/terms-conditions" element={<><ScrollToTop /><TermsConditionsPage /></>} />
                 <Route path="*" element={<><ScrollToTop /><NotFound /></>} />
               </Routes>
             </main>
