@@ -3,7 +3,6 @@ import ContactInfo from "@/components/ContactInfo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import emailjs from 'emailjs-com';
@@ -15,18 +14,13 @@ export default function ContactPage() {
     name: "",
     email: "",
     phone: "",
-    message: "",
-    consent: true
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleConsentChange = (checked: boolean) => {
-    setFormData(prev => ({ ...prev, consent: checked }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -37,15 +31,6 @@ export default function ContactPage() {
       toast({
         title: "Error",
         description: "Please fill all required fields",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    if (!formData.consent) {
-      toast({
-        title: "Error",
-        description: "Please provide consent to use your details for promotional messages",
         variant: "destructive"
       });
       return;
@@ -61,7 +46,6 @@ export default function ContactPage() {
         from_email: formData.email,
         phone: formData.phone || 'Not provided',
         message: formData.message,
-        consent: formData.consent ? 'Yes - Consent given for promotional messages' : 'No - No consent for promotional messages',
         reply_to: formData.email
       };
       
@@ -82,8 +66,7 @@ export default function ContactPage() {
         name: "",
         email: "",
         phone: "",
-        message: "",
-        consent: false
+        message: ""
       });
     } catch (error) {
       console.error('Error sending message:', error);
@@ -188,21 +171,6 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   className="border-gray-700 bg-black/30"
                 />
-              </div>
-              
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="consent"
-                  checked={formData.consent}
-                  onCheckedChange={handleConsentChange}
-                  disabled={isSubmitting}
-                />
-                <label 
-                  htmlFor="consent" 
-                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                >
-                  I consent to the use of my details for promotional messages and marketing communications*
-                </label>
               </div>
               
               <Button type="submit" className="w-full" disabled={isSubmitting}>
