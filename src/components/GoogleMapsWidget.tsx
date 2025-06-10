@@ -1,6 +1,23 @@
 
 import { useEffect, useRef } from 'react';
 
+// Extend the Window interface to include google
+declare global {
+  interface Window {
+    google: {
+      maps: {
+        Map: new (element: HTMLElement, options: any) => any;
+        Marker: new (options: any) => any;
+        InfoWindow: new (options: any) => any;
+        LatLngBounds: new () => any;
+        LatLng: new (lat: number, lng: number) => any;
+        Size: new (width: number, height: number) => any;
+        Point: new (x: number, y: number) => any;
+      };
+    };
+  }
+}
+
 interface Location {
   lat: number;
   lng: number;
@@ -28,7 +45,7 @@ const locations: Location[] = [
 
 export default function GoogleMapsWidget() {
   const mapRef = useRef<HTMLDivElement>(null);
-  const mapInstanceRef = useRef<google.maps.Map | null>(null);
+  const mapInstanceRef = useRef<any>(null);
 
   useEffect(() => {
     const initMap = () => {
