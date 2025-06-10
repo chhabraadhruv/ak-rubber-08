@@ -8,7 +8,7 @@ declare global {
 declare namespace google {
   namespace maps {
     class Map {
-      constructor(mapDiv: Element, opts?: MapOptions);
+      constructor(mapDiv: Element | null, opts?: MapOptions);
       fitBounds(bounds: LatLngBounds, padding?: number | Padding): void;
       setZoom(zoom: number): void;
       getZoom(): number;
@@ -17,6 +17,7 @@ declare namespace google {
       panTo(latlng: LatLng | LatLngLiteral): void;
       getBounds(): LatLngBounds | undefined;
       getDiv(): Element;
+      setOptions(options: MapOptions): void;
     }
 
     interface MapOptions {
@@ -33,6 +34,13 @@ declare namespace google {
       featureType?: string;
       elementType?: string;
       stylers?: any[];
+    }
+
+    interface Padding {
+      top: number;
+      right: number;
+      bottom: number;
+      left: number;
     }
 
     class Marker {

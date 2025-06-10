@@ -32,13 +32,13 @@ export default function GoogleMapsWidget() {
 
   useEffect(() => {
     const initMap = () => {
-      if (!mapRef.current || !window.google) return;
+      if (!mapRef.current || !window.google?.maps) return;
 
       // Center the map between both locations
       const centerLat = (locations[0].lat + locations[1].lat) / 2;
       const centerLng = (locations[0].lng + locations[1].lng) / 2;
 
-      const map = new google.maps.Map(mapRef.current, {
+      const map = new window.google.maps.Map(mapRef.current, {
         zoom: 10,
         center: { lat: centerLat, lng: centerLng },
         mapTypeControl: true,
@@ -67,8 +67,8 @@ export default function GoogleMapsWidget() {
       mapInstanceRef.current = map;
 
       // Add markers for each location
-      locations.forEach((location, index) => {
-        const marker = new google.maps.Marker({
+      locations.forEach((location) => {
+        const marker = new window.google.maps.Marker({
           position: { lat: location.lat, lng: location.lng },
           map: map,
           title: location.title,
@@ -78,12 +78,12 @@ export default function GoogleMapsWidget() {
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
             `),
-            scaledSize: new google.maps.Size(32, 32),
-            anchor: new google.maps.Point(16, 32)
+            scaledSize: new window.google.maps.Size(32, 32),
+            anchor: new window.google.maps.Point(16, 32)
           }
         });
 
-        const infoWindow = new google.maps.InfoWindow({
+        const infoWindow = new window.google.maps.InfoWindow({
           content: `
             <div style="color: #1f2937; max-width: 250px;">
               <h3 style="margin: 0 0 8px 0; font-weight: 600;">${location.title}</h3>
@@ -99,15 +99,15 @@ export default function GoogleMapsWidget() {
       });
 
       // Fit map to show both locations
-      const bounds = new google.maps.LatLngBounds();
+      const bounds = new window.google.maps.LatLngBounds();
       locations.forEach(location => {
-        bounds.extend(new google.maps.LatLng(location.lat, location.lng));
+        bounds.extend(new window.google.maps.LatLng(location.lat, location.lng));
       });
       map.fitBounds(bounds);
     };
 
     // Load Google Maps API if not already loaded
-    if (window.google && window.google.maps) {
+    if (window.google?.maps) {
       initMap();
     } else {
       const script = document.createElement('script');
