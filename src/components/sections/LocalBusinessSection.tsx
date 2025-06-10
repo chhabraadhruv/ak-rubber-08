@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
+import GoogleMapsWidget from "../GoogleMapsWidget";
 
 export default function LocalBusinessSection() {
   return (
@@ -15,6 +16,13 @@ export default function LocalBusinessSection() {
             Serving industries across Delhi NCR since 1991.
           </p>
         </div>
+        
+        {/* Google Maps Widget */}
+        <div className="mb-8">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4 text-center">Our Store Locations</h3>
+          <GoogleMapsWidget />
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           <div className="p-4 sm:p-6 bg-gray-800 rounded-lg">
             <h3 className="text-lg sm:text-xl font-bold mb-3 flex items-center">
