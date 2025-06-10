@@ -41,12 +41,12 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            </Link>
+            <Link to="/terms-conditions" className="text-gray-400 hover:text-white transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

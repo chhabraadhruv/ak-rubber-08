@@ -1,14 +1,25 @@
 
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight, TrendingUp } from "lucide-react";
+import { useEffect } from "react";
 
 const blogPosts = [
+  {
+    id: 2,
+    slug: "pneumatic-system-o-ring-replacement-guide",
+    title: "Pneumatic System O-Ring Replacement: A Complete Guide for Industrial Applications",
+    excerpt: "Master the essential skills of pneumatic O-ring replacement to prevent costly downtime and maintain optimal system performance in industrial operations.",
+    date: "2025-06-05",
+    readTime: "12 min read",
+    image: "/lovable-uploads/3ef9654a-fd56-4764-b151-b0888210ca3a.png",
+    category: "Maintenance Guide"
+  },
   {
     id: 1,
     slug: "hydraulic-cylinder-seal-kit-installation-guide",
     title: "Hydraulic Cylinder Seal Kit Installation: A Complete Guide",
     excerpt: "Learn the essential steps for proper hydraulic cylinder seal kit installation to maintain optimal performance and prevent costly downtime.",
-    date: "2024-01-15",
+    date: "2025-05-01",
     readTime: "8 min read",
     image: "/lovable-uploads/9110a679-cf87-406f-96ce-295cf2ab79f8.png",
     category: "Technical Guide"
@@ -16,6 +27,58 @@ const blogPosts = [
 ];
 
 export default function BlogPage() {
+  useEffect(() => {
+    // Update document title
+    document.title = 'Technical Blog & Industry Insights | AK Rubber Spares';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const description = 'Expert guidance on hydraulic components, O-rings, and industrial sealing solutions. Technical articles and maintenance guides from AK Rubber Spares specialists.';
+    if (metaDescription) {
+      metaDescription.setAttribute('content', description);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = description;
+      document.head.appendChild(meta);
+    }
+
+    // Update meta keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    const keywords = 'hydraulic seals, pneumatic O-rings, industrial maintenance, seal installation, technical guides, rubber spares';
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', keywords);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'keywords';
+      meta.content = keywords;
+      document.head.appendChild(meta);
+    }
+
+    // Add Open Graph meta tags
+    const updateOrCreateMetaTag = (property: string, content: string) => {
+      let metaTag = document.querySelector(`meta[property="${property}"]`);
+      if (metaTag) {
+        metaTag.setAttribute('content', content);
+      } else {
+        metaTag = document.createElement('meta');
+        metaTag.setAttribute('property', property);
+        metaTag.setAttribute('content', content);
+        document.head.appendChild(metaTag);
+      }
+    };
+
+    updateOrCreateMetaTag('og:title', 'Technical Blog & Industry Insights | AK Rubber Spares');
+    updateOrCreateMetaTag('og:description', description);
+    updateOrCreateMetaTag('og:url', 'https://www.akrubberspares.in/blog');
+    updateOrCreateMetaTag('og:type', 'website');
+
+    // Cleanup function
+    return () => {
+      document.title = 'AK Rubber Spares - Premium O-Rings & Hydraulic Seals';
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
       <main className="flex-1">
