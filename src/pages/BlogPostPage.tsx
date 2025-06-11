@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft, Phone, Mail } from "lucide-react";
 import { useEffect } from "react";
@@ -10,7 +9,7 @@ const blogPosts = {
     title: "Common Causes of Seal Failure in Industrial Equipment",
     date: "2025-06-11",
     readTime: "15 min read",
-    image: "/lovable-uploads/f7cf8b21-cb5e-4eae-b700-003f70a4e9ad.png",
+    image: "/lovable-uploads/e4c6859e-c5a9-4b6d-9dea-b901b5e75daf.png",
     category: "Technical Analysis",
     metaDescription: "Discover the primary reasons behind seal failures in industrial applications and learn proven strategies to prevent costly downtime and equipment damage.",
     keywords: "seal failure, industrial seals, equipment maintenance, seal reliability, hydraulic seals, mechanical seals",
