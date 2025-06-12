@@ -1,18 +1,9 @@
+
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight, TrendingUp } from "lucide-react";
 import { useEffect } from "react";
 
 const blogPosts = [
-  {
-    id: 3,
-    slug: "common-causes-seal-failure-industrial-equipment",
-    title: "Common Causes of Seal Failure in Industrial Equipment",
-    excerpt: "Discover the primary reasons behind seal failures in industrial applications and learn proven strategies to prevent costly downtime and equipment damage.",
-    date: "2025-06-11",
-    readTime: "15 min read",
-    image: "/lovable-uploads/e4c6859e-c5a9-4b6d-9dea-b901b5e75daf.png",
-    category: "Technical Analysis"
-  },
   {
     id: 2,
     slug: "pneumatic-system-o-ring-replacement-guide",
