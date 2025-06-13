@@ -17,6 +17,8 @@ import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsConditionsPage from "./pages/TermsConditionsPage";
+import SizeListsPage from "./pages/SizeListsPage";
+import SizeListDetailPage from "./pages/SizeListDetailPage";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -43,6 +45,8 @@ const App = () => (
                 <Route path="/" element={<><ScrollToTop /><HomePage /></>} />
                 <Route path="/about" element={<><ScrollToTop /><AboutPage /></>} />
                 <Route path="/products" element={<><ScrollToTop /><ProductsPage /></>} />
+                <Route path="/size-lists" element={<><ScrollToTop /><SizeListsPage /></>} />
+                <Route path="/size-lists/:slug" element={<><ScrollToTop /><SizeListDetailPage /></>} />
                 <Route path="/contact" element={<><ScrollToTop /><ContactPage /></>} />
                 <Route path="/blog" element={<><ScrollToTop /><BlogPage /></>} />
                 <Route path="/blog/:slug" element={<><ScrollToTop /><BlogPostPage /></>} />

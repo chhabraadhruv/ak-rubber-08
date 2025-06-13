@@ -46,6 +46,7 @@ export default function Header() {
               {[
                 { to: "/", label: "Home" },
                 { to: "/products", label: "Products" },
+                { to: "/size-lists", label: "Size Lists" },
                 { to: "/about", label: "About Us" },
                 { to: "/blog", label: "Blog" },
                 { to: "/contact", label: "Contact Us" },
@@ -97,6 +98,7 @@ export default function Header() {
                 {[
                   { to: "/", label: "Home" },
                   { to: "/products", label: "Products" },
+                  { to: "/size-lists", label: "Size Lists" },
                   { to: "/about", label: "About Us" },
                   { to: "/blog", label: "Blog" },
                   { to: "/contact", label: "Contact Us" },
