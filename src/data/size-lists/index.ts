@@ -1,11 +1,9 @@
 
 import { kastasK18SizeList } from "./kastas-compact-seal-k18";
-import { dowtyWashersSizeList } from "./dowty-washers-bonded-seal";
 import { SizeList } from "@/types/sizeList";
 
 export const sizeLists: SizeList[] = [
   kastasK18SizeList,
-  dowtyWashersSizeList,
   // Add more size lists here as they are created
 ];
 
