@@ -25,18 +25,16 @@ export default function SizeListTable({ data, title }: SizeListTableProps) {
           <TableHeader>
             <TableRow>
               <TableHead>Profile</TableHead>
-              <TableHead>OD (mm)</TableHead>
-              <TableHead>ID (mm)</TableHead>
-              <TableHead>Thickness</TableHead>
+              <TableHead>Size (BSP)</TableHead>
+              <TableHead>Internal Diameter</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {data.map((item, index) => (
               <TableRow key={index}>
                 <TableCell className="font-medium">{item.profile}</TableCell>
-                <TableCell>{item.od}</TableCell>
-                <TableCell>{item.id}</TableCell>
-                <TableCell>{item.thickness}</TableCell>
+                <TableCell>{item.profile}</TableCell>
+                <TableCell>{item.od}mm</TableCell>
               </TableRow>
             ))}
           </TableBody>
