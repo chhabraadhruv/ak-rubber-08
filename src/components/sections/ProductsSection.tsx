@@ -1,4 +1,4 @@
-import FilmReel from "@/components/FilmReel";
+
 import { Package, Wrench, Cog } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -60,11 +60,7 @@ export default function ProductsSection() {
         ))}
       </div>
       
-      <div className="my-12 animate-fade-in" style={{animationDelay: '0.7s'}}>
-        <FilmReel />
-      </div>
-      
-      <div className="text-center animate-fade-in" style={{animationDelay: '0.9s'}}>
+      <div className="text-center animate-fade-in" style={{animationDelay: '0.7s'}}>
         <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-8 border border-gray-700">
           <p className="text-lg sm:text-xl mb-4 text-gray-300">
             <strong className="text-primary">Serving Industries:</strong> Manufacturing, Automotive, Construction, Agriculture, 
