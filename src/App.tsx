@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -43,6 +42,8 @@ const App = () => (
                 <Route path="/" element={<><ScrollToTop /><HomePage /></>} />
                 <Route path="/about" element={<><ScrollToTop /><AboutPage /></>} />
                 <Route path="/products" element={<><ScrollToTop /><ProductsPage /></>} />
+                <Route path="/products/all" element={<><ScrollToTop /><AllProductsPage /></>} />
+                <Route path="/products/:slug" element={<><ScrollToTop /><ProductDetailPage /></>} />
                 <Route path="/contact" element={<><ScrollToTop /><ContactPage /></>} />
                 <Route path="/blog" element={<><ScrollToTop /><BlogPage /></>} />
                 <Route path="/blog/:slug" element={<><ScrollToTop /><BlogPostPage /></>} />
@@ -58,5 +59,9 @@ const App = () => (
     </ThemeProvider>
   </QueryClientProvider>
 );
+
+// ... keep existing code (export and imports for new components)
+import AllProductsPage from "./pages/AllProductsPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 export default App;

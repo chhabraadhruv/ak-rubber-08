@@ -8,19 +8,22 @@ export default function ProductsSection() {
       icon: Package,
       title: "O-Rings",
       description: "NBR, Viton, EPDM, Silicone - All sizes & custom specifications",
-      delay: "0.1s"
+      delay: "0.1s",
+      link: "/products/o-rings"
     },
     {
       icon: Wrench,
       title: "Hydraulic Seals",
       description: "Rod seals, Piston seals, Wiper seals for all hydraulic systems",
-      delay: "0.3s"
+      delay: "0.3s",
+      link: "/products/hydraulic-seals"
     },
     {
       icon: Cog,
       title: "Industrial Rubber",
       description: "Rubber sheets, gaskets, V-seals & pneumatic components",
-      delay: "0.5s"
+      delay: "0.5s",
+      link: "/products/all"
     }
   ];
 
@@ -38,21 +41,22 @@ export default function ProductsSection() {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
         {products.map((product, index) => (
-          <div 
-            key={product.title}
-            className="group p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-gray-700 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in cursor-pointer"
-            style={{animationDelay: product.delay}}
-          >
-            <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-yellow-400 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
-              <product.icon className="h-8 w-8 text-black" />
+          <Link key={product.title} to={product.link}>
+            <div 
+              className="group p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-gray-700 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in cursor-pointer"
+              style={{animationDelay: product.delay}}
+            >
+              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-yellow-400 rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                <product.icon className="h-8 w-8 text-black" />
+              </div>
+              <h3 className="font-bold text-xl mb-3 text-primary group-hover:text-yellow-400 transition-colors duration-300">
+                {product.title}
+              </h3>
+              <p className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed">
+                {product.description}
+              </p>
             </div>
-            <h3 className="font-bold text-xl mb-3 text-primary group-hover:text-yellow-400 transition-colors duration-300">
-              {product.title}
-            </h3>
-            <p className="text-gray-300 group-hover:text-white transition-colors duration-300 leading-relaxed">
-              {product.description}
-            </p>
-          </div>
+          </Link>
         ))}
       </div>
       
