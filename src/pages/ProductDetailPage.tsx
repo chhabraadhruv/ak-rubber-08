@@ -1,10 +1,8 @@
-
 import { useParams, Link } from "react-router-dom";
 import { getProductPageBySlug } from "@/data/product-pages";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Package, Settings, Wrench } from "lucide-react";
-import FilmReel from "@/components/FilmReel";
 import { useEffect } from "react";
 
 export default function ProductDetailPage() {
@@ -227,10 +225,6 @@ export default function ProductDetailPage() {
               </CardContent>
             </Card>
           </div>
-
-          <section className="my-8" aria-label="Company showcase">
-            <FilmReel />
-          </section>
 
           <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
             <CardContent className="p-8 text-center">

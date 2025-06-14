@@ -1,11 +1,9 @@
-
 import { useState, useEffect } from "react";
 import { getAllProductPages, getProductPagesByCategory } from "@/data/product-pages";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import FilmReel from "@/components/FilmReel";
 
 export default function AllProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -157,10 +155,6 @@ export default function AllProductsPage() {
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="mb-12" aria-label="Company showcase">
-          <FilmReel />
         </section>
 
         <section className="text-center">
