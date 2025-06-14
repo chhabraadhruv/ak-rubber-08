@@ -3,22 +3,48 @@ import { ProductPage } from "@/types/productPage";
 
 export const highPressureSeals: ProductPage[] = [
   {
-    id: "chevron-seals",
-    name: "Chevron Seals",
-    slug: "chevron-seals",
-    description: "Dynamic sealing solutions designed for high-pressure applications with excellent sealing performance.",
-    detailedDescription: "These seals feature a V-shaped profile that provides effective sealing under varying pressure conditions while maintaining low friction operation.",
-    materials: ["PU Rubber", "Nitrile Rubber"],
-    sizeRange: "20mm to 500mm OD",
-    specialFeatures: ["V-shaped profile", "High pressure applications", "Low friction operation"],
-    applications: ["High-pressure hydraulics", "Heavy machinery", "Press applications", "Industrial equipment"],
+    id: "dowty-seals",
+    name: "Dowty Seals",
+    slug: "dowty-seals",
+    description: "Self-centering bonded seals with metal washer and rubber insert for high-pressure hydraulic connections.",
+    detailedDescription: "Dowty seals (also known as bonded seals or bonded washers) combine a metal washer with a precisely molded rubber insert to create a reliable sealing solution for high-pressure hydraulic and pneumatic connections. The metal component provides structural strength while the rubber element ensures effective sealing.",
+    materials: ["NBR (Nitrile Rubber)", "Metal (Steel/Stainless Steel)"],
+    sizeRange: "BSP 1/8\" to BSP 2\" (10mm to 60.45mm internal diameter)",
+    specialFeatures: [
+      "Self-centering design",
+      "Metal washer with rubber insert",
+      "High-pressure capability",
+      "Reliable sealing performance",
+      "Easy installation",
+      "Suitable for hydraulic connections"
+    ],
+    applications: [
+      "Hydraulic systems",
+      "Pneumatic connections",
+      "High-pressure applications",
+      "Industrial machinery",
+      "Automotive systems",
+      "Marine equipment"
+    ],
     specifications: {
-      "Material": "PU and Nitrile Rubber",
-      "Size Range": "20mm to 500mm OD",
-      "Profile": "V-shaped chevron",
-      "Pressure Rating": "Up to 1000 bar"
+      "Material Combination": "Metal washer with NBR rubber insert",
+      "Pressure Rating": "Up to 400 bar",
+      "Temperature Range": "-40°C to +120°C",
+      "Thread Standards": "BSP (British Standard Pipe)",
+      "Available Sizes": "BSP 1/8\" to BSP 2\"",
+      "BSP 1/8\" Internal Diameter": "10mm",
+      "BSP 1/4\" Internal Diameter": "13.5mm",
+      "BSP 3/8\" Internal Diameter": "17.5mm",
+      "BSP 1/2\" Internal Diameter": "21.5mm",
+      "BSP 5/8\" Internal Diameter": "23.5mm",
+      "BSP 3/4\" Internal Diameter": "26.9mm",
+      "BSP 7/8\" Internal Diameter": "30.68mm",
+      "BSP 1\" Internal Diameter": "33.76mm",
+      "BSP 1.1/4\" Internal Diameter": "42.8mm",
+      "BSP 1.1/2\" Internal Diameter": "48.31mm",
+      "BSP 2\" Internal Diameter": "60.45mm"
     },
-    image: "/lovable-uploads/3e229a8e-00d4-41da-8c22-1ec8b03b4000.png",
-    category: "High-Pressure Seals"
+    image: "/lovable-uploads/e1469aed-b196-4f71-a0b4-86817946f790.png",
+    category: "High Pressure Seals"
   }
 ];
