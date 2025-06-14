@@ -7,4 +7,6 @@ export interface Product {
   category?: string;
   specifications?: string[];
   applications?: string[];
+  keywords?: string[];
+  location?: string;
 }

@@ -1,6 +1,6 @@
-
 import FilmReel from "@/components/FilmReel";
 import { Package, Wrench, Cog } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ProductsSection() {
   const products = [
