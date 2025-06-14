@@ -44,7 +44,7 @@ export const highPressureSeals: ProductPage[] = [
       "BSP 1.1/2\" Internal Diameter": "48.31mm",
       "BSP 2\" Internal Diameter": "60.45mm"
     },
-    image: "/lovable-uploads/e1469aed-b196-4f71-a0b4-86817946f790.png",
+    image: "/lovable-uploads/ff003fcf-b72a-4bab-97ff-6cb17ed3d813.png",
     category: "High Pressure Seals"
   }
 ];
