@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { getProductPageBySlug } from "@/data/product-pages";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ArrowLeft, Package, Settings, Wrench } from "lucide-react";
 import { useEffect } from "react";
 
@@ -13,6 +14,11 @@ export default function ProductDetailPage() {
   }
 
   const product = getProductPageBySlug(slug);
+
+  // Add console logging to debug
+  console.log("Product slug:", slug);
+  console.log("Found product:", product);
+  console.log("Product specifications:", product?.specifications);
 
   useEffect(() => {
     if (product) {
@@ -106,6 +112,27 @@ export default function ProductDetailPage() {
       </div>
     );
   }
+
+  // Helper function to check if specifications contain BSP size data
+  const getBSPSizeData = () => {
+    const bspEntries = Object.entries(product.specifications).filter(([key]) => 
+      key.includes("BSP") && key.includes("Internal Diameter")
+    );
+    
+    if (bspEntries.length === 0) return null;
+    
+    return bspEntries.map(([key, value], index) => {
+      const sizeMatch = key.match(/BSP ([^"]*)"?/);
+      const size = sizeMatch ? `BSP ${sizeMatch[1]}"` : key;
+      return {
+        sNo: index + 1,
+        size: size,
+        diameter: value
+      };
+    });
+  };
+
+  const bspSizeData = getBSPSizeData();
 
   return (
     <div className="animate-slide-in">
@@ -215,7 +242,9 @@ export default function ProductDetailPage() {
               </CardHeader>
               <CardContent>
                 <dl className="space-y-3">
-                  {Object.entries(product.specifications).map(([key, value]) => (
+                  {Object.entries(product.specifications)
+                    .filter(([key]) => !key.includes("BSP") || !key.includes("Internal Diameter"))
+                    .map(([key, value]) => (
                     <div key={key}>
                       <dt className="font-medium text-sm text-muted-foreground">{key}</dt>
                       <dd className="text-sm">{value}</dd>
@@ -225,6 +254,37 @@ export default function ProductDetailPage() {
               </CardContent>
             </Card>
           </div>
+
+          {bspSizeData && (
+            <Card className="mb-8">
+              <CardHeader>
+                <CardTitle className="flex items-center">
+                  <Package className="h-5 w-5 mr-2 text-primary" />
+                  Available BSP Sizes
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>S.No.</TableHead>
+                      <TableHead>Size (BSP)</TableHead>
+                      <TableHead>Internal Diameter</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {bspSizeData.map((item) => (
+                      <TableRow key={item.sNo}>
+                        <TableCell>{item.sNo}</TableCell>
+                        <TableCell className="font-medium">{item.size}</TableCell>
+                        <TableCell>{item.diameter}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </CardContent>
+            </Card>
+          )}
 
           <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
             <CardContent className="p-8 text-center">
